@@ -69,6 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         openModal(btnPathfinderModal, pathfinderModal);
         closeModal(pathfinderModal);
+
+        // Следопыт
+        // начало - список и видео
+        const btnPathfinderTask = document.querySelector('.btn-pathfinder'),
+              taskPathfinder = document.querySelector('.task-pathfinder');
+
+        btnPathfinderTask.addEventListener('click', () => {
+            choice.style.display = 'none';
+            taskPathfinder.style.display = 'block';
+            pathfinderModal.remove();
+        });
     
     });
 });
