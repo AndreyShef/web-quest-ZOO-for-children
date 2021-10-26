@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест|Главная</title>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Дополнение к теме -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body style='background-image: url("images/begin.jpg");'>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-author-img">
+                <img src="images/author.png" alt="Автор" class="author-img">
+            </div>
+            <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-author-dialog">
+                <h1 class="author-dialog">Привет, ребята!</h1>
+                <p>Сегодня мы прогуляемся по лесу в поисках животных, обитающих в наших краях! 
+                    Мы изведаем следы зверей, узнаем, чем питаюся лесные животные, кто из них впадает в спячку, 
+                    а кто зимой меняет шубку. Для этого мы разделимся на две команды: зоологи и следопыты. Выберите
+                    в какую команду Вы вступите!
+                </p> 
+            </div>
+            <div class="col-lg-12 choice">
+                <button class="btn btn-danger btn-choice">Перейти к выбору</button>
+            </div>
+            <div class="col-lg-12 wrapper-choice">
+                <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-img-zoologist">
+                    <img class="img-zoologist" src="images/zoologist.png" alt="Зоолог">
+                    <p>Зоолог</p>
+                    <p><a href="myModal" class="btn btn-danger btn-zoologist-who_is_it" data-toggle="modal">Кто это?</a></p>
+                    <p><button class="btn btn-danger btn-zoologist">Выбрать</button></p>
+                </div>
+                <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-img-pathfinde">
+                    <img class="img-pathfinder" src="images/pathfinder.png" alt="Следопыт">
+                    <p>Следопыт</p>
+                    <p><a href="#" class="btn btn-danger btn-pathfinder-who_is_it" data-toggle="modal">Кто это?</a></p>
+                    <p><button class="btn btn-danger btn-pathfinder">Выбрать</button></p>
+                </div>
+            </div>
+            
+        
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Заголовок модального окна -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Кто такой Зоолог?</h4>
+            </div>
+            <!-- Основное содержимое модального окна -->
+            <div class="modal-body">
+              
+                <p>Профессия Зоолог. Зоолог – это ученый, который изучает животный мир. 
+                    Задачами современных зоологов являются изучение уже существующих видов животных, 
+                    поиск новых видов, защита животных, которые находятся под угрозой исчезновения, 
+                    исследования болезней животных.</p>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+ </div>
+</div>  
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+<script src="js/script.js"></script>
+</body>
+</html>
