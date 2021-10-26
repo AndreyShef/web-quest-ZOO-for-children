@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const zooModal = document.querySelector('#zooModal'),
               pathfinderModal = document.querySelector('#pathfinderModal'),
               btnZooModal = document.querySelector('.btn-zoologist-who_is_it'),
-              btnPathfinderModal = document.querySelector('.btn-pathfinder-who_is_it');
+              btnPathfinderModal = document.querySelector('.btn-pathfinder-who_is_it'),
+              btnClose = document.querySelectorAll('.close');
 
         function openModal(button, modal) {
             button.addEventListener('click', () => {
@@ -53,9 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        function closeModal(modal) {
+            btnClose.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.classList.remove('show');
+                    modal.classList.add('fade');
+                });
+            });
+            
+        }
+
         openModal(btnZooModal, zooModal);
+        closeModal(zooModal);
 
         openModal(btnPathfinderModal, pathfinderModal);
+        closeModal(pathfinderModal);
     
     });
 });
