@@ -33,39 +33,57 @@
                 <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-img-zoologist">
                     <img class="img-zoologist" src="images/zoologist.png" alt="Зоолог">
                     <p>Зоолог</p>
-                    <p><a href="myModal" class="btn btn-danger btn-zoologist-who_is_it" data-toggle="modal">Кто это?</a></p>
+                    <p><a href="zooModal" class="btn btn-danger btn-zoologist-who_is_it" data-toggle="modal">Кто это?</a></p>
                     <p><button class="btn btn-danger btn-zoologist">Выбрать</button></p>
                 </div>
                 <div class="col-lg-6 col-mg-6 col-sm-12 wrapper-img-pathfinde">
                     <img class="img-pathfinder" src="images/pathfinder.png" alt="Следопыт">
                     <p>Следопыт</p>
-                    <p><a href="#" class="btn btn-danger btn-pathfinder-who_is_it" data-toggle="modal">Кто это?</a></p>
+                    <p><a href="pathfinderModal" class="btn btn-danger btn-pathfinder-who_is_it" data-toggle="modal">Кто это?</a></p>
                     <p><button class="btn btn-danger btn-pathfinder">Выбрать</button></p>
                 </div>
             </div>
             
-        
-    <div id="myModal" class="modal fade">
+    <!-- Модальное окно - кто такой зоолог     -->
+    <div id="zooModal" class="modal fade">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Заголовок модального окна -->
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title">Кто такой Зоолог?</h4>
-            </div>
-            <!-- Основное содержимое модального окна -->
-            <div class="modal-body">
-              
-                <p>Профессия Зоолог. Зоолог – это ученый, который изучает животный мир. 
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Кто такой Зоолог?</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <p>Профессия Зоолог. Зоолог – это ученый, который изучает животный мир. 
                     Задачами современных зоологов являются изучение уже существующих видов животных, 
                     поиск новых видов, защита животных, которые находятся под угрозой исчезновения, 
                     исследования болезней животных.</p>
-              
+                </div>
             </div>
-          </div>
         </div>
-        
-      </div>
+    </div>
+
+    <!-- Модальное окно - кто такой следопыт     -->
+    <div id="pathfinderModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Кто такой Следопыт?</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <p>Следопыт – это человек, который может распознавать следы, знает, какому зверю они принадлежат. 
+                        По найденным следам следопыт может найти животное. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
  </div>
 </div>  
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
