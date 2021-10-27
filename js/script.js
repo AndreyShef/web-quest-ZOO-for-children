@@ -74,27 +74,50 @@ document.addEventListener("DOMContentLoaded", () => {
         openModal(btnPathfinderModal, pathfinderModal);
         closeModal(pathfinderModal);
 
-        // Следопыт
+        // ---- Следопыт ---- //
+
         // начало - список и видео
         const btnPathfinderTask = document.querySelector('.btn-pathfinder'),
               taskPathfinder = document.querySelector('.task-pathfinder');
 
         btnPathfinderTask.addEventListener('click', () => {
-            // choice.style.display = 'none';
             choice.remove();
             taskPathfinder.style.display = 'block';
             pathfinderModal.remove();
         });
 
+        // задание - распознать следы
         const btnTransitionTaskPahfinder = document.querySelector('.btn-transition-task-pathfinder'),
-              bodyPathfinder = document.querySelector('body');
+              bodyPathfinder = document.querySelector('body'),
+              fonBodyPathf = 'url(images/body-wild-pathfinder.jpg)',
+              trace = document.querySelector('.wrapper-task-trace'),
+              imgTrace = document.querySelectorAll('.img-trace');
 
         btnTransitionTaskPahfinder.addEventListener('click', (e) => {
             taskPathfinder.style.transition = '1s';
             bodyPathfinder.style.transition = '1s';
+            trace.style.transition = '3s';
             removElement(taskPathfinder);
-            bodyPathfinder.style.backgroundImage = 'url(images/body-wild-pathfinder.jpg)';
+            bodyPathfinder.style.backgroundImage = fonBodyPathf;
+            // trace.style.display = 'block';
+            setTimeout(() => {
+                trace.style.display = 'block';
+                function loopTrace(i) {
+                    imgTrace[i].style.display = 'block';
+                    if(i <= imgTrace.length) {
+                        setTimeout(() => {
+                            i++;
+                            loopTrace(i);
+                        }, 1000);
+                        
+                    }
+                    
+                }
+                loopTrace(0);
+            }, 3000);
+
         });
+
     
     });
 });

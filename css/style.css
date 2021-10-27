@@ -96,3 +96,18 @@ div.task-pathfinder {
 ul.pathfinder li {
     list-style-type: none;
 }
+
+.wrapper-task-trace {
+    height: 100vh;
+    display: none;
+}
+
+.img-trace {
+    display: none;
+    float: left;
+    margin: 50px;
+    width: 20%;
+    overflow: hidden;
+    margin-top: 70vh;
+}
+.img-trace img {width: 200px;}
