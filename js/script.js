@@ -13,16 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
     body.innerHTML = beginer;
 
+    function removElement(modul) {
+        setTimeout(() =>{ 
+            modul.style.opacity = 0; 
+            setTimeout(() => modul.remove(), 600);
+        }, 800);
+    };
+
     // После нажатия вперёд! (начало квеста)
     const btnBegin = document.querySelector('.btn'),
         div = document.querySelector('.wrapper-beginer');
     div.style.transition = '1s';
     
     btnBegin.addEventListener('click', (e) => {
-        setTimeout(() =>{ 
-            div.style.opacity = 0; 
-            setTimeout(() => div.remove(), 600);
-        }, 800);
+        removElement(div);
         body.append(container);
 
         // Удаление диалога автора
@@ -76,9 +80,20 @@ document.addEventListener("DOMContentLoaded", () => {
               taskPathfinder = document.querySelector('.task-pathfinder');
 
         btnPathfinderTask.addEventListener('click', () => {
-            choice.style.display = 'none';
+            // choice.style.display = 'none';
+            choice.remove();
             taskPathfinder.style.display = 'block';
             pathfinderModal.remove();
+        });
+
+        const btnTransitionTaskPahfinder = document.querySelector('.btn-transition-task-pathfinder'),
+              bodyPathfinder = document.querySelector('body');
+
+        btnTransitionTaskPahfinder.addEventListener('click', (e) => {
+            taskPathfinder.style.transition = '1s';
+            bodyPathfinder.style.transition = '1s';
+            removElement(taskPathfinder);
+            bodyPathfinder.style.backgroundImage = 'url(images/body-wild-pathfinder.jpg)';
         });
     
     });
