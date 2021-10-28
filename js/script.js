@@ -91,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
               bodyPathfinder = document.querySelector('body'),
               fonBodyPathf = 'url(images/body-wild-pathfinder.jpg)',
               trace = document.querySelector('.wrapper-task-trace'),
-              imgTrace = document.querySelectorAll('.img-trace');
+              imgTrace = document.querySelectorAll('.img-trace'),
+              taskTrace = document.querySelector('.task-trace');
 
         btnTransitionTaskPahfinder.addEventListener('click', (e) => {
             taskPathfinder.style.transition = '1s';
@@ -99,26 +100,32 @@ document.addEventListener("DOMContentLoaded", () => {
             trace.style.transition = '3s';
             removElement(taskPathfinder);
             bodyPathfinder.style.backgroundImage = fonBodyPathf;
-            // trace.style.display = 'block';
+
+
+            
+            
             setTimeout(() => {
                 trace.style.display = 'block';
-                function loopTrace(i) {
-                    imgTrace[i].style.display = 'block';
-                    if(i <= imgTrace.length) {
+                function loopTrace() {
+                    imgTrace.forEach((div, i) => {
+                        let ms = (i + 1) * 1000;
                         setTimeout(() => {
-                            i++;
-                            loopTrace(i);
-                        }, 1000);
-                        
-                    }
-                    
+                            div.style.display = 'block';
+                            if(i === imgTrace.length - 1) {
+                                loopTrace();
+                                console.log(111);
+                            }
+                        }, ms);
+                        if(imgTrace.length > i) {
+                            taskTrace.innerHTML = `<button class="btn btn-danger btn-task-trace">Угадай, чьи следы</button>`;
+                        }
+                    });
                 }
-                loopTrace(0);
+                loopTrace();
+                console.log(222);
             }, 3000);
-
+            
         });
-
-    
     });
 });
 
