@@ -115,9 +115,26 @@ ul.pathfinder li {
 }
 .img-trace img {width: 90%;}
 
-.btn-task-trace {display: none;}
+.btn-task-trace {
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 5s ease-in 4s;
+
+}
 
 .task-trace {
-    margin-top: 70vh;
+    display: none;
+    margin-top: 100px;
+}
+
+.img-zoo-pathf {
+    overflow: hidden;
     text-align: center;
+}
+.zoo-task-pathf {
+    width: 90%;
+}
+.btn.answer {
+    font-size: 25px;
+    margin-top: 40px;
 }

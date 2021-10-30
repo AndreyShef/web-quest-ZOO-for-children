@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
               fonBodyPathf = 'url(images/body-wild-pathfinder.jpg)',
               trace = document.querySelector('.wrapper-task-trace'),
               imgTrace = document.querySelectorAll('.img-trace'),
+              btnTaskTrace = document.querySelector('.btn-task-trace'),
               taskTrace = document.querySelector('.task-trace');
 
         btnTransitionTaskPahfinder.addEventListener('click', (e) => {
@@ -100,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trace.style.transition = '3s';
             removElement(taskPathfinder);
             bodyPathfinder.style.backgroundImage = fonBodyPathf;
+            // let traceWindow;
 
 
             
@@ -109,23 +111,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 function loopTrace() {
                     imgTrace.forEach((div, i) => {
                         let ms = (i + 1) * 1000;
-                        setTimeout(() => {
+                        traceWindow = setTimeout(() => {
                             div.style.display = 'block';
                             if(i === imgTrace.length - 1) {
                                 loopTrace();
                                 console.log(111);
+                                
                             }
                         }, ms);
-                        if(imgTrace.length > i) {
-                            taskTrace.innerHTML = `<button class="btn btn-danger btn-task-trace">Угадай, чьи следы</button>`;
-                        }
+                        
                     });
                 }
                 loopTrace();
+                if(document.querySelector('.last-trace')) {
+                    clearTimeout(traceWindow);
+                    // btnTaskTrace.style.opacity = '1';
+                }
+                
                 console.log(222);
             }, 3000);
             
+            btnTaskTrace.style.opacity = '1';
+            // btnTaskTrace.style.transition = 'all 5s ease-in 4s';
+
+            
         });
+
+        btnTaskTrace.addEventListener('click', () => {
+            trace.remove();
+            taskTrace.style.display = 'block';
+        });
+
+        
     });
 });
 
