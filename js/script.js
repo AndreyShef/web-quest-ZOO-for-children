@@ -101,11 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             trace.style.transition = '3s';
             removElement(taskPathfinder);
             bodyPathfinder.style.backgroundImage = fonBodyPathf;
-            // let traceWindow;
-
-
-            
-            
+           
             setTimeout(() => {
                 trace.style.display = 'block';
                 function loopTrace() {
@@ -115,26 +111,17 @@ document.addEventListener("DOMContentLoaded", () => {
                             div.style.display = 'block';
                             if(i === imgTrace.length - 1) {
                                 loopTrace();
-                                console.log(111);
-                                
                             }
                         }, ms);
-                        
                     });
                 }
                 loopTrace();
                 if(document.querySelector('.last-trace')) {
                     clearTimeout(traceWindow);
-                    // btnTaskTrace.style.opacity = '1';
                 }
-                
-                console.log(222);
             }, 3000);
             
             btnTaskTrace.style.opacity = '1';
-            // btnTaskTrace.style.transition = 'all 5s ease-in 4s';
-
-            
         });
 
         btnTaskTrace.addEventListener('click', () => {
@@ -142,6 +129,44 @@ document.addEventListener("DOMContentLoaded", () => {
             taskTrace.style.display = 'block';
         });
 
+        const answerTrace = document.querySelectorAll('.answer'),
+              imgZooPathf = document.querySelectorAll('.img-zoo-pathf'),
+              imgZoo = document.querySelectorAll('.zoo-task-pathf'),
+              searhHome = document.querySelector('.btn-search-home'),
+              right = 'Верно',
+              wrong = 'Неверно';
+
+        function rightWrong(b, text) {
+            b.style.display = 'none';
+            b.insertAdjacentHTML('afterend', `<p class="right_wrong">${text}</p>`);
+        }
+
+        answerTrace.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i != 1) {
+                    rightWrong(btn, wrong);
+                } else {
+                    rightWrong(btn, right);
+                    imgZooPathf.forEach(i => {
+                        imgZooPathf[0].remove();
+                        imgZooPathf[2].remove();
+                        imgZooPathf[1].classList.remove('col-lg-4');
+                        imgZooPathf[1].classList.add('col-lg-12');
+                        imgZoo.forEach(i => {
+                            imgZoo[1].style.width = '40%';
+                        });             
+                    });
+                    const textBtn = `
+                        <div class="col-mg-12 search-home">
+                            <button class="btn btn-danger">Найдём домик зайчика</button>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        searhHome.innerHTML = textBtn;
+                    }, 4000);
+                }
+            });
+        });
         
     });
 });
