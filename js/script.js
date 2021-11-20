@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     const textBtn = `
                         <div class="col-mg-12 search-home">
-                            <button class="btn btn-danger">Найдём домик зайчика</button>
+                            <button class="btn btn-danger btn-search-home">К следующему заданию</button>
                         </div>
                     `;
                     setTimeout(() => {
@@ -167,6 +167,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+        // задание - кто здесь живёт?
+        const btnSearchHome = document.querySelector('.btn-search-home'),
+              content = document.querySelector('.row');
+
+        btnSearchHome.addEventListener('click', () => {
+            taskTrace.remove();
+            content.innerHTML = `
+                <div class="col-lg-4 img-zoo-pathf">
+                    <img src="images/fox.png" alt="Лиса" class="zoo-task-pathf">
+                    <p><button class="btn btn-danger answer">Лиса</button></p>
+                </div>
+                <div class="col-lg-4 img-zoo-pathf">
+                    <img src="images/hare.png" alt="Заяц" class="zoo-task-pathf">
+                    <p><button class="btn btn-danger answer">Заяц</button></p>
+                </div>
+                <div class="col-lg-4 img-zoo-pathf">
+                    <img src="images/squirrel.png" alt="Белка" class="zoo-task-pathf">
+                    <p><button class="btn btn-danger answer">Белка</button></p>
+                </div>
+                <div class="col-lg-12 wrapper-fox-hole">
+                    <img src="images/fox-hole.jpg" alt="Нора лисы" class="img-fox-hole">
+                    <h3>Чей это домик?</h3>
+                </div>
+            `;
+        });
+
         
     });
 });

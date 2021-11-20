@@ -145,3 +145,15 @@ ul.pathfinder li {
     margin-top: 40px;
 }
 .search-home {text-align: center;}
+
+.wrapper-fox-hole {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.img-fox-hole {
+    /* float: left; */
+    width: 150px;
+    margin: 0 auto;
+}
